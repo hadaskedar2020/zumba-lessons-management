@@ -1,7 +1,0 @@
-INSERT INTO songs  (id, name, length_seconds,genre_id, link) values (777,"777",777,1,"www.666.com");
-
-insert into songs_performers values (666, 777, 3);
-
-insert into songs_performers values (667, 777, 4);
-
-commit;
