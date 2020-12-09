@@ -29,12 +29,12 @@
 		<div class="results left" id="Events"><h4><u>Current {{display_table_name}}s</u></h4>
 		<table>
 			<tr id="table_caption">
-				<th> No. </th><th> Name </a></th><th> Length in seconds </th><th> Genre </th>
+				<th> Name </a></th><th> Length in seconds </th><th> Genre </th>
 			</tr> 
 
 			{% for row in found_data %}
 			<tr>
-				<th> {{ row[0] }}</th><th><a href="{{ url_for('.single_song_management', song_id=row[0], _anchor='ancor_location')}}" title="Edit or Delete Song"> {{ row[1] }}</a></th><th> {{ row[2] }}</th><th> {{ row[3] }}</th>
+				<th><a href="{{ url_for('.single_song_management', song_id=row[0], _anchor='ancor_location')}}" title="Edit or Delete Song"> {{ row[1] }}</a></th><th> {{ row[2] }}</th><th> {{ row[3] }}</th>
 			</tr> 
 			{% endfor %}
 		</table>

@@ -20,7 +20,7 @@
   </div>
   <div class="button">
 	<h2>Zumba Songs Repository</h2>
-	<form id="playlist_creation" class="row" action="{{ url_for('.song_searcher', _anchor='ancor_location') }}" method="get">
+	<form id="playlist_creation" class="row" action="{{ url_for('.song_searcher') }}" method="get">
         <div class="col-auto">
 			<label><strong>Find me a zumba song! </strong></label>
 			<button type="submit" class="btn btn-info"><strong>Go</strong></button>
@@ -39,10 +39,8 @@
 				<option value="songs">Songs</option>
 				<option value="performers">Performers</option>
 				<option value="genres">Genres</option>
-				</select><br>
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-info"><strong>Go</strong></button>
+			</select>
+         <button type="submit" class="btn btn-info"><strong>Go</strong></button>
         </div>
       </form>
 

@@ -16,23 +16,23 @@
     <h1>Zumba lessons management - Made easy<br>You won't believe it!</h1>
   </div>
   <div id="ancor_location" class="button">
-	<h2><u>Song Searcher {{display_message}}</u></h2>
+	<h2><u>Song Searcher</u></h2>
   </div>
   <div>
 	<form id="song_form" action="{{ url_for('.song_searcher') }}" method="get" enctype="multipart/form-data">	
 		<div class="form-row">
 			<div class="form-group col-md-2">
 				<label for="Genre_id">I want a Song of this Genre</label>
-				<select class="form-control dropdown-toggle" name="genre_id" id="genre_id" value='{{genre_id}}'>
+				<select class="form-group col-md-10" name="genre_id" id="genre_id" value='{{genre_id}}'>
 				<option value="None">Select Genre</option>
 					{% for row in genres_data %}
 					<option value="{{ row[0] }}">{{ row[1] }}</option>
 					{% endfor %}
 				</select>
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-10">
 				<label for="Performers">I want a Song of this Performer</label>
-				<select class="form-control dropdown-toggle" name="performer_id" id="performer_id" value='{{performer_id}}'>
+				<select class="form-group col-md-10" name="performer_id" id="performer_id" value='{{performer_id}}'>
 					<option value="None">Select performer</option>
 						{% for row in artists_data %}
 						<option value="{{ row[0] }}">{{ row[1] }}</option>
@@ -43,19 +43,19 @@
 			<button type="submit" class="btn btn-info"><strong>Search</strong></button>
         </div>
 	</div>
-	<div class="results left" id="Events"><h4><u>Matching songs found</u></h4>
+	<div class="results left button" id="Events"><h4><u>Results {{display_message}}</u></h4>
 		<table>
 		<tr id="table_caption">
-			<th> No. </th><th> Name </a></th><th> Length in seconds </th><th> Genre </th>
+			<th> Name </a></th><th> Length </th><th> Genre </th>
 		</tr> 
 
 		{% for row in found_data %}
 		<tr>
-			<th> {{ row[0] }}</th><th><a href="{{ url_for('.single_song_management', song_id=row[0], _anchor='ancor_location')}}" title="Edit or Delete Song"> {{ row[1] }}</a></th><th> {{ row[2] }}</th><th> {{ row[3] }}</th>
+			<th><a href="{{ url_for('.single_song_management', song_id=row[0], _anchor='ancor_location')}}" title="Edit or Delete Song"> {{ row[1] }}</a></th><th> {{ row[2] }}</th><th> {{ row[3] }}</th>
 		</tr> 
 		{% endfor %}
 		</table>
-	<div>
+	</div>
 	<div>
 	<p id="homepage" class="col-auto"> <strong>Back to <a href="{{ url_for('.management', _anchor='ancor_location') }}">Homepage  </a></strong> </p>
 	</div>
