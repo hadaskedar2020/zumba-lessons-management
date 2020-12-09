@@ -60,8 +60,13 @@ def select_songs_data_from_table():
     session = Session(engine)
     all_data = session.query(Song.id, Song.name, Song.length_seconds, Genre.name, Song.genre_id).order_by(
         Song.name).join('genres').all()
+    resultset = []
+    for row in all_data:
+        row = list(row)
+        row[2] = convert_length_seconds_into_minutes(row[2])
+        resultset.append(list(row))
     session.close()
-    return all_data
+    return resultset
 
 
 def select_one_songs_data(song_id):
