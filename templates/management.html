@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- דף ראשי -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zumba lessons management</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:Semi-bold+600,Black+900">
+	<link href="{{ url_for('static', filename='my.css') }}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+
+<div class="grid-container">
+  <div class="header">
+    <h1 id="ancor_location">Zumba lessons management - Made easy<br>You won't believe it!</h1>
+  </div>
+  <div class="button">
+	<h2>Zumba Songs Repository</h2>
+	<form id="playlist_creation" class="row" action="{{ url_for('.song_searcher', _anchor='ancor_location') }}" method="get">
+        <div class="col-auto">
+			<label><strong>Find me a zumba song! </strong></label>
+			<button type="submit" class="btn btn-info"><strong>Go</strong></button>
+        </div>
+		<input type=hidden id="genre_id" name="genre_id" value=None>
+		<input type=hidden id="performer_id" name="performer_id" value=None>
+		<input type=hidden id="mode" name="mode" value=Open>
+    </form>
+	<br>
+	<h2>Repository Management</h2>
+	<form id="table_selection" class="row" action="{{ url_for('.manage_simple_table', _anchor='ancor_location') }}" method="get">
+        <div class="col-auto">
+          <label id="selected_table"><strong>Select data type to manage: </strong></label>
+			<select class="btn btn-info" name="selected_table" id="dropdown" required>
+				<option value="">Select table</option>
+				<option value="songs">Songs</option>
+				<option value="performers">Performers</option>
+				<option value="genres">Genres</option>
+				</select><br>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-info"><strong>Go</strong></button>
+        </div>
+      </form>
+
+	</div>
+
+  
+  <div class="footer">
+  <p>All rights reserved to Hadas Kedar  <a href="mailto:hadasit@gmail.com">E-mail</a></p>
+  
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--  תחזוקת טבלת ז'אנרים ומבצעים -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zumba lessons management</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:Semi-bold+600,Black+900">
+	<link href="{{ url_for('static', filename='my.css') }}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+
+<div class="grid-container">
+  <div class="header">
+    <h1 id="ancor_location">Zumba lessons management - Made easy<br>You won't believe it!</h1>
+  </div>
+  <div class="button">
+	<h2>Database Management {{display_message}}</h2>
+	
+		<form id="genre-form" class="row" action="{{ url_for('.remanage_table', table_name=table_name) }}" method="post" enctype="multipart/form-data">
+	<div class="col-auto">
+          <label id="name"><strong>New {{display_table_name}} name: </strong></label>
+			<input name="new_object_name" type="text" required>
+        </div>
+        <div class="col-auto">
+			<button type="submit" class="btn btn-info"><strong>Add</strong></button>
+        </div>
+      </form>
+	  
+		<div class="results left" id="Events"><h4><u>Current {{display_table_name}}s</u></h4>
+		<table>
+			<tr id="table_caption">
+				<th> Name </a></th>
+			</tr> 
+		
+			{% for row in found_data %}
+			<tr>
+				<th> {{ row[0] }}</th><th> {{ row[1] }}</th>
+			</tr> 
+			{% endfor %}
+		</table>
+		<!-- {{ found_genres | safe}} -->
+		</div>
+	<div>
+	<p id="homepage" class="col-auto"> <strong>Back to <a href="{{ url_for('.management', _anchor='ancor_location') }}">Homepage  </a></strong> </p>
+	</div>
+</div>
+  
+  <div class="footer">
+  <p>All rights reserved to Hadas Kedar <a href="mailto:hadasit@gmail.com"> E-mail</a></p>
+  
+  </div>
+</div>
+
+</body>
+</html>

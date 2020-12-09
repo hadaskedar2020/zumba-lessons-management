@@ -1,0 +1,128 @@
+/* CSS Template inspiration from: https://www.w3schools.com/css/css_templates.asp */
+
+
+* {
+  box-sizing: border-box;
+  direction: ltr;
+  margin: 0.2em;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Rubik:Semi-bold 600', serif;
+}
+
+.header {
+	padding: 55px;
+  background-image: url("/static/zumba.jpg");
+  text-align: center;
+  background-position: center;
+  font-size: 50px;
+  margin: 0;
+	/* height: 100vh; background-size: cover; */
+	
+}
+
+.header h1 {
+	font-size: 50px;
+	color: #00d3ff;
+	font-weight: bolder;
+	font-family: 'Rubik:Black 900', serif;
+	text-shadow: 5px 5px 5px #aaa;
+    animation: fadeInFromNone 2s ease-out;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 50px 0;	
+}
+
+#table_caption {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.button {
+  background-color: #FDF5E6;
+  padding: 15px;
+  text-align: left;
+  font-size: 25px;
+  color: #B8860B;
+}
+
+.button a {
+  color: deepskyblue;	
+}
+
+form {
+	background-color: #FDF5E6;
+	color: #B8860B;
+}
+
+#song_details {
+	text-align: left;
+}
+
+
+.left {
+  padding: 10px;
+  text-align: left;
+  min-height: 300px;
+	font-size: 18px;
+  background-color: #F5DEB3;
+}
+
+#homepage {
+	background-color: #FDF5E6;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	color: #B8860B;
+}	
+
+#homepage a {
+  color: deepskyblue;	
+}
+
+.img {
+	text-align: center;
+	justify-content: center;
+}
+
+.footer {
+  background-color: #B8860B;
+  padding: 3px;
+  text-align: center;
+  color: deepskyblue;
+  font-weight: bold;
+}
+
+.footer a {
+  color: #F5DEB3;
+  font-weight: bold;
+}
+
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+  .header h1 {
+	  font-size: 60px;
+	}
+}
+
