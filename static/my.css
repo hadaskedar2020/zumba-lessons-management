@@ -1,5 +1,3 @@
-/* CSS Template inspiration from: https://www.w3schools.com/css/css_templates.asp */
-
 
 * {
   box-sizing: border-box;
@@ -13,7 +11,7 @@ body {
 }
 
 .header {
-	padding: 55px;
+  padding: 60px;
   background-image: url("/static/zumba.jpg");
   text-align: center;
   background-position: center;
@@ -84,6 +82,8 @@ form {
 #homepage a {
   color: deepskyblue;	
 }
+
+select::-ms-expand { display: block; }
 
 .img {
 	text-align: center;
